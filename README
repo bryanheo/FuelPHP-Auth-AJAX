@@ -1,0 +1,18 @@
+Ok, lets assume that we have a working copy of FuelPHP with simpleauth
+
+We are going to use a REST controller along with some javascript (jQuery) to end up with a working AJAX based login page.
+
+<ol>
+	<li>Download jQuery and put it in public/assets/js/jquery-1.6.1.min.js</li>
+	<li>
+	    Edit your template file and edit to include jquery: fuel/app/views/template.php. Add the following line to the <head> element of your template:
+		<pre lang='php'><?php echo Asset::js('jquery-1.6.1.min.js'); ?></pre>
+		</li>
+	<li>Now, lets create a new REST controller. I like to keep all of my REST controller separate from my other 'normal' controllers. To achieve this separation, I create a folder under fuel/app/classes/controller/q and keep all of my REST controller in that directory. So lets start by creating the 'q' directory under /fuel/app/classes/cotnroller.
+        <ol>
+            <li><pre lang='bash'>mkdir q</pre></li>
+            <li><pre lang='bash'></pre></li>
+        </ol>
+	</li>
+	<li></li>
+</ol>

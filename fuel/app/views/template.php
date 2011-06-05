@@ -11,6 +11,7 @@
 		#footer p { font-size: 14px; text-align: right; }
 		a { color: #000; }
 	</style>
+    <?php echo Asset::js('jquery-1.6.1.min.js'); ?>
 </head>
 <body>
 	<div id="wrapper">
