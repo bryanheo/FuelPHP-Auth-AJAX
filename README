@@ -46,7 +46,7 @@ We are going to use a REST controller along with some javascript (jQuery) to end
         $this->response(array('valid' => false, 'error' => 'Invalid user name or password, please try again'), 200);
     }
 }</pre></li>
-        <li>There is a bug in FuelPHP 1.0 RC 2.1, we'll need to edit core/classes/controller/rest.php and change line #103 that currently reads:<pre lang='php'>$this->response->set_header('Content-Type: '.$this->_supported_formats[$this->request->format]);</pre> and change it to:<pre lang='php'>$this->response->set_header('Content-Type', $this->_supported_formats[$this->request->format]);</pre></li>
+        <li>There is a bug in FuelPHP 1.0 RC 2.1 (https://github.com/greenwebdev/core/commit/fc7ac2305a046856c4b18c0cec94ff82cea79945). We'll need to edit core/classes/controller/rest.php and change line #103 that currently reads:<pre lang='php'>$this->response->set_header('Content-Type: '.$this->_supported_formats[$this->request->format]);</pre> and change it to:<pre lang='php'>$this->response->set_header('Content-Type', $this->_supported_formats[$this->request->format]);</pre></li>
         </ol>
 	</li>
 	<li>Now, edit the login view for the users controller fuel/app/views/users/login.php to look something like this:
