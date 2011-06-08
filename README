@@ -154,4 +154,19 @@ Login to your account using your username and password.
 	<li>Thats it. At this point, when you try to access the users controller, it should throw you over to the login page. Try to login, if you dont have enabled, then you should be able to use the traditional web page submit. if you have javascript enabled browser, it will not cause a page refresh to check for the login. If your login/password is good, you will be logged in and redirected to a predefined page.
 
 	Please note that if you have not changed your routes, the default controller is 'welcome'. And since we changed the template around a bit in the last article, you will see some errors after logging in and landing at the welcome controller. This is because the welcome controller does not extend a Controller_Template or our own Controller_Common.</li>
+	<li>*Edit 6/7/2011 @ 12:45pm* Here's the welcome controller modified to work with this example:
+	<pre lang='php'>class Controller_Welcome extends Controller_Common {
+	public function action_index()
+	{
+        $this->template->title = "Welcome";
+		$this->template->content = View::factory('welcome/index');
+	}
+	public function action_404()
+	{
+        Log::info('ERROR 404: ' . $_SERVER['REDIRECT_URL']);
+        $this->response->status = 404;
+        $this->template->title = "404";
+		$this->template->content = View::factory('welcome/404');
+	}
+}</pre></li>
 </ol>
